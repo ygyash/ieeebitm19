@@ -261,6 +261,8 @@ Parallax
 Intro
 ================================= */
 
+
+
 #intro {
   width: 100%;
   height: 100vh;
@@ -871,3 +873,412 @@ more media queries
 		font-size: 3vw;
 	}
 }
+
+/* card */
+
+.cardcontainer{
+	margin: 0 1vw ;
+	padding: 0 1vw;
+}
+
+.front,
+  .back{
+    background-size: cover;
+      background-position: center;
+      -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      -webkit-backface-visibility: hidden;
+              backface-visibility: hidden;
+      text-align: center;
+      min-height: 280px;
+	  height: auto;
+      border-radius: 10px;
+      color: #fff;
+      font-size: 1.5rem;
+      font-family:'Roboto Condensed', sans-serif;
+  }
+  
+  .back{
+    color: #000;
+    background: #282828;
+    background: -webkit-linear-gradient(45deg, #eaeeef 0%,#5e8fd4 100%);
+    background: -o-linear-gradient(45deg,  #eaeeef 0%,#5e8fd4 100%);
+    background: linear-gradient(45deg,  #eaeeef 0%,#5e8fd4 100%);
+  }
+  
+  .front:after{
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      content: '';
+      display: block;
+      opacity: .6;
+      background-color: #000;
+      -webkit-backface-visibility: hidden;
+              backface-visibility: hidden;
+      border-radius: 10px;
+  }
+  .cardcontainer:hover .front,
+  .cardcontainer:hover .back{
+      -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+      transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  }
+  
+  .back{
+      position: absolute;
+      top: 0;
+      left: 35px;
+	  bottom:0;
+	  width: 80%;
+
+  }
+  
+  .inner{
+      -webkit-transform: translateY(-50%) translateZ(60px) scale(0.94);
+              transform: translateY(-50%) translateZ(60px) scale(0.94);
+      top: 50%;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      padding: 2rem;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      outline: 1px solid transparent;
+      -webkit-perspective: inherit;
+              perspective: inherit;
+      z-index: 2;
+  }
+  
+  .cardcontainer .back{
+      -webkit-transform: rotateY(180deg);
+              transform: rotateY(180deg);
+      -webkit-transform-style: preserve-3d;
+              transform-style: preserve-3d;
+  }
+  
+  .cardcontainer .front{
+      -webkit-transform: rotateY(0deg);
+              transform: rotateY(0deg);
+      -webkit-transform-style: preserve-3d;
+              transform-style: preserve-3d;
+  }
+  
+  .cardcontainer:hover .back{
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+  }
+  
+  .cardcontainer:hover .front{
+    -webkit-transform: rotateY(-180deg);
+            transform: rotateY(-180deg);
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+  }
+  
+  .front .inner p{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    font-family:'Roboto Condensed', sans-serif;
+  }
+  
+  .front .inner p:after{
+    content: '';
+    width: 4rem;
+    height: 2px;
+    position: absolute;
+    background: #C6D4DF;
+    display: block;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: -.75rem;
+  }
+  
+  .front .inner span{
+    color: rgba(255,255,255,0.7);
+    font-family: 'Montserrat';
+    font-weight: 300;
+  }
+  
+  .anchor {
+    display:block;
+    padding-top:100px;
+    margin-top:-100px;
+ }
+
+
+
+ /* Hackabit Facts */
+ #facts {
+	background: #f7f7f7;
+	padding: 80px 0 60px 0;
+  }
+  
+  #facts .counters span {
+	font-size: 48px;
+	color: #2dc997;
+  }
+  
+  #facts .counters p {
+	padding: 0;
+	margin: 0 0 20px 0;
+	font-family: "Poppins", sans-serif;
+	font-size: 14px;
+  }
+
+
+  /* SECTION */
+  .section-header .section-title {
+	font-size: 32px;
+	color: #111;
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: 700;
+	margin-bottom: 5px;
+  }
+  
+  .section-header .section-description {
+	text-align: center;
+	padding-bottom: 40px;
+	color: #999;
+  }
+
+
+  /* Hackabit Leaderboard */
+
+  /*--------------------
+Body
+--------------------*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*--------------------
+Leaderboard
+--------------------*/
+.leaderboard {
+
+	margin: auto;
+	background: linear-gradient(to bottom, #3a404d, #181c26);
+	border-radius: 10px;
+	box-shadow: 0 7px 30px rgba(62, 9, 11, 0.3);
+  }
+  .leaderboard h1 {
+	font-size: 18px;
+	color: #e1e1e1;
+	padding: 12px 13px 18px;
+  }
+  .leaderboard h1 svg {
+	width: 25px;
+	height: 26px;
+	position: relative;
+	top: 3px;
+	margin-right: 6px;
+	vertical-align: baseline;
+  }
+  .leaderboard ol {
+	counter-reset: leaderboard;
+  }
+  .leaderboard a{
+	  color: #fff;
+  }
+  .leaderboard ol li {
+	text-align: left;
+	position: relative;
+	z-index: 1;
+	font-size: 14px;
+	counter-increment: leaderboard;
+	padding: 18px 10px 18px 50px;
+	cursor: pointer;
+	-webkit-backface-visibility: hidden;
+			backface-visibility: hidden;
+	-webkit-transform: translateZ(0) scale(1, 1);
+			transform: translateZ(0) scale(1, 1);
+  }
+  .leaderboard ol li::before {
+	content: counter(leaderboard);
+	position: absolute;
+	z-index: 2;
+	top: 15px;
+	left: 15px;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	color: #c24448;
+	background: #fff;
+	border-radius: 20px;
+	text-align: center;
+  }
+  .leaderboard ol li mark {
+	position: absolute;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 18px 10px 18px 50px;
+	margin: 0;
+	background: none;
+	color: #fff;
+  }
+  .leaderboard ol li mark::before, .leaderboard ol li mark::after {
+	content: '';
+	position: absolute;
+	z-index: 1;
+	bottom: -11px;
+	left: -9px;
+	border-top: 10px solid #c24448;
+	border-left: 10px solid transparent;
+	transition: all .1s ease-in-out;
+	opacity: 0;
+  }
+  .leaderboard ol li mark::after {
+	left: auto;
+	right: -9px;
+	border-left: none;
+	border-right: 10px solid transparent;
+  }
+  .leaderboard ol li small {
+	position: relative;
+	z-index: 2;
+	display: block;
+	text-align: right;
+  }
+  .leaderboard ol li::after {
+	content: '';
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #fa6855;
+	box-shadow: 0 3px 0 rgba(0, 0, 0, 0.08);
+	transition: all .3s ease-in-out;
+	opacity: 0;
+  }
+  .leaderboard ol li:nth-child(1) {
+	background: #fa6855;
+  }
+  .leaderboard ol li:nth-child(1)::after {
+	background: #fa6855;
+  }
+  .leaderboard ol li:nth-child(2) {
+	background: #e0574f;
+  }
+  .leaderboard ol li:nth-child(2)::after {
+	background: #e0574f;
+	box-shadow: 0 2px 0 rgba(0, 0, 0, 0.08);
+  }
+  .leaderboard ol li:nth-child(2) mark::before, .leaderboard ol li:nth-child(2) mark::after {
+	border-top: 6px solid #ba4741;
+	bottom: -7px;
+  }
+  .leaderboard ol li:nth-child(3) {
+	background: #d7514d;
+  }
+  .leaderboard ol li:nth-child(3)::after {
+	background: #d7514d;
+	box-shadow: 0 1px 0 rgba(0, 0, 0, 0.11);
+  }
+  .leaderboard ol li:nth-child(3) mark::before, .leaderboard ol li:nth-child(3) mark::after {
+	border-top: 2px solid #b0433f;
+	bottom: -3px;
+  }
+  .leaderboard ol li:nth-child(4) {
+	background: #cd4b4b;
+  }
+  .leaderboard ol li:nth-child(4)::after {
+	background: #cd4b4b;
+	box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15);
+  }
+  .leaderboard ol li:nth-child(4) mark::before, .leaderboard ol li:nth-child(4) mark::after {
+	top: -7px;
+	bottom: auto;
+	border-top: none;
+	border-bottom: 6px solid #a63d3d;
+  }
+  .leaderboard ol li:nth-child(5) {
+	background: #c24448;
+	border-radius: 0 0 10px 10px;
+  }
+  .leaderboard ol li:nth-child(5)::after {
+	background: #c24448;
+	box-shadow: 0 -2.5px 0 rgba(0, 0, 0, 0.12);
+	border-radius: 0 0 10px 10px;
+  }
+  .leaderboard ol li:nth-child(5) mark::before, .leaderboard ol li:nth-child(5) mark::after {
+	top: -9px;
+	bottom: auto;
+	border-top: none;
+	border-bottom: 8px solid #993639;
+  }
+  .leaderboard ol li:hover {
+	z-index: 2;
+	overflow: visible;
+  }
+  .leaderboard ol li:hover::after {
+	opacity: 1;
+	-webkit-transform: scaleX(1.06) scaleY(1.03);
+			transform: scaleX(1.06) scaleY(1.03);
+  }
+  .leaderboard ol li:hover mark::before, .leaderboard ol li:hover mark::after {
+	opacity: 1;
+	transition: all .35s ease-in-out;
+  }
+  
+  .the-most {
+	position: fixed;
+	z-index: 1;
+	bottom: 0;
+	left: 0;
+	width: 50vw;
+	max-width: 200px;
+	padding: 10px;
+  }
+  .the-most img {
+	max-width: 100%;
+  }
+  
+
+/* contact us page */
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 60%;
+    text-align: left;
+    border: 2px;
+    outline: none;
+    transition: 0.4s;
+  }
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .active, .accordion:hover {
+    background-color: #ccc;
+  }
+  
+  /* Style the accordion panel. Note: hidden by default */
+  .panel {
+	margin: 0 auto;
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow:none;
+    width: 60%;
+  } 

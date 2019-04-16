@@ -1,0 +1,342 @@
+﻿<!Doctype html>
+<html lang='en-us'>
+    <head>
+        <title>IEEE | BIT Mesra</title>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <!-- css -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,300,700,800" rel="stylesheet" media="screen">
+        <link rel="icon" href="img/ieee-icon.ico">
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="css/style.css" rel="stylesheet" media="screen">
+        <link href="color/default.css" rel="stylesheet" media="screen">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function() {
+    
+            $('#name_error_msg').hide();
+            $('#email_error_msg').hide();
+            $('#phone_error_msg').hide();
+            $('#message_error_msg').hide();
+            $('.result').hide();
+    
+            var name_error =false;
+            var email_error =false;
+            var phone_error =false;
+            var message_error =false;
+    
+            $('#name').focusout(function(){
+                check_name();
+            });
+            $('#email').focusout(function(){
+                check_email();
+            });
+            $('#phone').focusout(function(){
+                check_phone();
+            });
+            $('#message').focusout(function(){
+                check_message();
+            });
+    
+            function check_name() {
+                var name = $('#name').val();
+                if(name!='' && name.trim()!='') {
+                    $('#name_error_msg').hide();
+                }
+                else {
+                        $('#name_error_msg').html("Name field cannot be empty.");
+                        $('#name_error_msg').show();
+                        name_error=true;
+                }
+    
+            }
+    
+            function check_email() {
+                var pattern = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+                var email = $('#email').val();
+                if(pattern.test(email)&&email!='') {
+                    $('#email_error_msg').hide();
+                }
+                else {
+                    // console.log("eoig");
+                    $('#email_error_msg').html("Invalid email.");
+                    $('#email_error_msg').show();
+                    email_error=true;
+                }
+            }
+    
+            function check_phone() {
+                var pattern = /^((\+[1-9]{1,4}[ \-]*)|(\([0-9]{2,3}\)[ \-]*)|([0-9]{2,4})[ \-]*)*?[0-9]{3,4}?[ \-]*[0-9]{3,4}?$/;
+                var phone = $('#phone').val();
+                if(pattern.test(phone)&&phone!='') {
+                    $('#phone_error_msg').hide();
+                }
+                else {
+                    $('#phone_error_msg').html("Invalid phone number.");
+                    $('#phone_error_msg').show();
+                    phone_error=true;
+                }
+            }
+    
+            function check_message() {
+                message = $('#message').val();
+                if(message!=''&& message.trim()!='') {
+                    $('#message_error_msg').hide();
+                }
+                else {
+                    $('#message_error_msg').html("Message field cannot be empty.");
+                    $('#message_error_msg').show();
+                    message_error=true;
+                }
+            }
+    
+            $('.mailbtn').click(function() {
+                name_error=false;
+                email_error=false;
+                phone_error=false;
+                message_error=false;
+    
+                check_name();
+                check_email();
+                check_phone();
+                check_message();
+    
+                if(name_error==false && email_error==false && phone_error==false && message_error==false) {
+                    var name = $('#name').val();
+                    var email = $('#email').val();
+                    var phone = $('#phone').val();
+                    var message = $('#message').val();
+                    $('.result').css("display","block");
+                        
+                    $.ajax({
+                        type: "POST",
+                        url:'form_action.php',
+                        data: {name : name, email : email, phone : phone, message : message},
+                        success: function() {
+              alert("Message Sent!");
+            }
+                    });
+                }
+                else {
+                    alert("Please fill the form correctly.");
+                }
+            });
+        });
+    
+    </script>
+      
+      </head>
+<body style="overflow-x: hidden;">
+    <nav class="navbar navbar-default fixed-to-top" role="navigation" style="display:block">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+              <span class="sr-only">Toggle nav</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+    
+            <!-- Logo text or image -->
+            <a class="navbar-brand" href="index.html">IEEE</a>
+    
+          </div>
+          <div class="navigation collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="events.html">Events</a></li>
+              <li><a href="workshop.html">Workshops</a></li>
+              <li><a href="megaproject.html">Mega Project</a></li>
+              <li><a href="hackabit.html">Hackabit</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+      <section id="contact-form" class="home-section bg-white">
+
+          <div class="row">
+              <div class="col-md-offset-2 col-md-8">
+                <div class="section-heading">
+                  <h2>Contact</h2>
+                  <div class="heading-line"></div>
+                </div>
+              </div>
+            </div>
+          <div class="container wow fadeInUp mt-5" style="visibility: visible; animation-name: fadeInUp;">
+              <div class="row justify-content-center">
+                  
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                  <div class="form">
+                    <div class="result" >Your message has been sent. Thank you!</div>
+                   
+                    <form>
+                      <div class="form-group">
+                        <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4">
+                        <div id="name_error_msg" class="validation"></div>
+                      </div>
+                      <div class="form-group">
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email">
+                        <div id="email_error_msg" class="validation"></div>
+                      </div>
+                      <div class="form-group">
+                        <input type="text" class="form-control" name="phone" id="phone" placeholder="Phone" data-rule="minlen:4">
+                        <div id="phone_error_msg" class="validation"></div>
+                      </div>
+                      <div class="form-group">
+                        <textarea class="form-control" id="message" name="message" rows="5" data-rule="required" placeholder="Message"></textarea>
+                        <div id="message_error_msg" class="validation"></div>
+                      </div>
+                      <div class="text-center"><button class="mailbtn btn btn-primary" >Send Message</button></div>
+                    </form>
+                  </div>
+                </div>
+                <div class="col-md-2"></div>
+      
+              </div>
+            </div>
+        </section>
+
+<section id="faq">
+                <div class="section-header">
+                        <div class="section-heading">
+                            <h2 style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">FaQ</h2>
+                            <div class="heading-line"></div>
+                        </div>    
+                </div>    
+            <button class="accordion">How to Join IEEE?</button>
+            <div class="panel">
+              <p>Follow <a href="https://www.ieee.org/membership/join/index.html">this</a> link to Join IEEE as a student member.</p>
+            </div>
+            
+            <button class="accordion">What are the benefits of becomming an IEEE memeber?</button>
+            <div class="panel">
+              <p>You will get a platform to share your thoughts and develop technologies with talented people from around the globe and hence to link with people to share and gain knowledge. You will get access to many research papers published by IEEE. Follow <a href="https://www.ieee.org/membership/join/index.html#benefits">this</a> link to know more. 
+              </p>
+            </div>
+            
+            <button class="accordion">How can I contribute to IEEE as a member?</button>
+            <div class="panel">
+              <p>You can contribute by continuously striving for knowledge and then by sharing it selflessly to the world.</p>
+            </div> 
+        </section>
+ <!-- Bottom widget -->
+  <section id="bottom-widget" class="home-section bg-white">
+    <div class="container">
+      <div class="row">
+        <h2>IEEE | BIT Mesra</h2>
+        <h5>Student Branch Code: STB32081</h5>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="contact-widget wow bounceInLeft">
+            <i class="fa fa-map-marker fa-4x"></i>
+            <h5>Address</h5>
+            <p>
+              Birla Institute of Technology, Mesra<br/>Ranchi, Jharkhand 835215
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="contact-widget wow bounceInUp">
+            <i class="fa fa-phone fa-4x"></i>
+            <h5>Call</h5>
+            <p>
+              +91 800 283 3738
+
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="contact-widget wow bounceInRight">
+            <i class="fa fa-envelope fa-4x"></i>
+            <h5>Email us</h5>
+            <p>
+              hello@alstarstudio.com<br />sales@alstarstudio.com
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row mar-top30">
+        <div class="col-md-12">
+          <h5>We're on social networks</h5>
+          <ul class="social-network">
+            <li><a href="https://www.facebook.com/ieeebitmesra/">
+                <span class="fa-stack fa-2x">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                </span></a>
+            </li>
+            <li><a href="#">
+                <span class="fa-stack fa-2x">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                </span></a>
+            </li>
+            <li><a href="#">
+                <span class="fa-stack fa-2x">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                </span></a>
+            </li>
+           
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p>Copyright &copy; 2019</p>
+          <div class="credits">
+            Designed by Yash Goyal Shashwat Shaurya</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+ 
+  <!-- js -->
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/wow.min.js"></script>
+  <script src="js/jquery.scrollTo.min.js"></script>
+  <script src="js/jquery.nav.js"></script>
+  <script src="js/modernizr.custom.js"></script>
+  <script src="js/grid.js"></script>
+  <script src="js/stellar.js"></script>
+
+  <script>
+    var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    /* Toggle between adding and removing the "active" class,
+    to highlight the button that controls the panel */
+    this.classList.toggle("active");
+
+    /* Toggle between hiding and showing the active panel */
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+    </script>
+</body> 
+</html>

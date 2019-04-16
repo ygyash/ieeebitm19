@@ -1,0 +1,38 @@
+
+
+.content {
+    text-align: center;
+}
+
+.content a img {
+    width: 30%;
+    height: 100%;
+    margin: 3px;
+}
+
+.content a {
+    text-decoration: none;
+    outline: none;
+    overflow: hidden;
+}
+
+.content a:hover img{
+    cursor: default;
+    transition: .5s;
+    transform: scale(1.02);
+    /* -webkit-filter: blur(5px);
+    filter: blur(0.75px); */
+}
+
+@media (max-width: 800px) {
+    .content a img {
+        width: 45%;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .content a img {
+        width: 85%;
+    }
+}

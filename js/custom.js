@@ -25,7 +25,8 @@
     $(".navbar-collapse.collapse").removeClass('in');
   });
 
-  //
+   // jQuery counterUp
+
 
   // Smooth scroll for the get started button
   $('.btn-get-started').on('click', function(e) {
@@ -110,7 +111,7 @@
     }
 
   });
-
+  
 
   // Carousel
   $('.service .carousel').carousel({
@@ -124,5 +125,10 @@
 
   //animation
   new WOW().init();
+
+
+   
+    
+  
 
 })(jQuery);
