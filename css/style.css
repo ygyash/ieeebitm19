@@ -877,8 +877,11 @@ more media queries
 /* card */
 
 .cardcontainer{
-	margin: 0 1vw ;
-	padding: 0 1vw;
+	margin: 4vw 2vw;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+-webkit-perspective: 1000px;
+		perspective: 1000px;
 }
 
 .front,
@@ -891,14 +894,13 @@ more media queries
       transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
       transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
       -webkit-backface-visibility: hidden;
-              backface-visibility: hidden;
+      backface-visibility:hidden;
       text-align: center;
       min-height: 280px;
 	  height: auto;
       border-radius: 10px;
       color: #fff;
       font-size: 1.5rem;
-      font-family:'Roboto Condensed', sans-serif;
   }
   
   .back{
@@ -906,9 +908,9 @@ more media queries
     background: #282828;
     background: -webkit-linear-gradient(45deg, #eaeeef 0%,#5e8fd4 100%);
     background: -o-linear-gradient(45deg,  #eaeeef 0%,#5e8fd4 100%);
-    background: linear-gradient(45deg,  #eaeeef 0%,#5e8fd4 100%);
+		background: linear-gradient(45deg,  #eaeeef 0%,#5e8fd4 100%);
   }
-  
+	
   .front:after{
       position: absolute;
       top: 0;
@@ -918,7 +920,7 @@ more media queries
       height: 100%;
       content: '';
       display: block;
-      opacity: .6;
+      opacity: 0.6;
       background-color: #000;
       -webkit-backface-visibility: hidden;
               backface-visibility: hidden;
@@ -936,9 +938,9 @@ more media queries
   .back{
       position: absolute;
       top: 0;
-      left: 35px;
+      left: 0;
 	  bottom:0;
-	  width: 80%;
+	  width: 100%;
 
   }
   
@@ -956,7 +958,7 @@ more media queries
       -webkit-perspective: inherit;
               perspective: inherit;
       z-index: 2;
-  }
+	}
   
   .cardcontainer .back{
       -webkit-transform: rotateY(180deg);
@@ -990,7 +992,6 @@ more media queries
     font-size: 2rem;
     margin-bottom: 2rem;
     position: relative;
-    font-family:'Roboto Condensed', sans-serif;
   }
   
   .front .inner p:after{
@@ -1008,7 +1009,6 @@ more media queries
   
   .front .inner span{
     color: rgba(255,255,255,0.7);
-    font-family: 'Montserrat';
     font-weight: 300;
   }
   
@@ -1034,7 +1034,6 @@ more media queries
   #facts .counters p {
 	padding: 0;
 	margin: 0 0 20px 0;
-	font-family: "Poppins", sans-serif;
 	font-size: 14px;
   }
 
