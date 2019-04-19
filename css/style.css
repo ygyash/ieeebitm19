@@ -524,10 +524,8 @@ Works
 }
 
 .og-grid li {
-	display: inline-block;
+	display: block;
 	margin: 10px 5px 0 5px;
-	vertical-align: top;
-	height: 250px;
 }
 
 .og-grid li > a,
@@ -1281,3 +1279,4 @@ Leaderboard
     overflow:none;
     width: 60%;
   } 
+
