@@ -1082,23 +1082,7 @@ Leaderboard
 	font-size: 18px;
 	color: #e1e1e1;
 	padding: 12px 13px 18px;
-  }
-  .leaderboard h1 svg {
-	width: 25px;
-	height: 26px;
-	position: relative;
-	top: 3px;
-	margin- #e1e1e1;
-	padding: 12px 13px 18px;
-  }
-  .leaderboard h1 svg {
-	width: 25px;
-	height: 26px;
-	position: relative;
-	top: 3px;
-	margin-right: 6px;
-	vertical-align: baseline;
-  }
+		}
   .leaderboard ol {
 	counter-reset: leaderboard;
   }
@@ -1165,7 +1149,6 @@ Leaderboard
     text-align: right;
     
 }
-  }
   .leaderboard ol li::after {
 	content: '';
 	position: absolute;
