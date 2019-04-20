@@ -217,6 +217,10 @@ Home sections
 	margin-bottom: 20px;
 }
 
+/*  background-position: center center; */
+.carousel-background {
+	background-position: center center;
+}
 
 /* --- section bg var --- */
 
