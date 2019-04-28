@@ -2,7 +2,7 @@
 $name = $_POST['name'];
 $email = $_POST['email'];
 $phone = $_POST['phone'];
-$to = 'ygyashgoyal@gmail.com';
+$to = 'contact@ieeebitmesra.in';
 $subject = 'IEEE Contact Form Response';
 $message = $_POST['message'];
 $body='<html>
