@@ -19,5 +19,7 @@ $headers="From: ".$name." <".$email.">\r\n";
 $headers.="Reply-To :".$email."\r\n";
 $headers.="MIME-Version: 1.0\r\n";
 $headers.="Content-type: text/html; charset=utf-8";
-mail($to, $subject, $body, $headers);
+if($name!="" && $email!="" && $phone!="" && $message!="") {
+    mail($to, $subject, $body, $headers);
+}
 ?>
